@@ -10,8 +10,11 @@ const myObject = {
   };
 
   myObject.incr();
-  console.log("{ type: 'object', value: 13, incr: [Function] }");
+  console.log(myObject);
+  // console.log("{ type: 'object', value: 13, incr: [Function] }");
   myObject.incr();
-  console.log("{ type: 'object', value: 14, incr: [Function] }");
+  console.log(myObject);
+  // console.log("{ type: 'object', value: 14, incr: [Function] }");
   myObject.incr();
-  console.log("{ type: 'object', value: 15, incr: [Function] }");
+  console.log(myObject);
+    // console.log("{ type: 'object', value: 15, incr: [Function] }");
