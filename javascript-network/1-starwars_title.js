@@ -12,7 +12,13 @@ options = {
 request.get(options,(err,res)=>{
     if (err) console.log(err)
 
-    jsodd = JSON.parse(res.body)
-	console.log(jsodd['title']);
+    jsonres = JSON.parse(res.body)
+	console.log(jsonres['title']);
 });
 
+// ANOTHER WAY
+/*request.get('https://swapi-api.alx-tools.com/api/films/1', {encoding : 'utf-8'} )
+        .on('data', data => {
+            jsonres = JSON.parse(data)
+            console.log(jsonres['title'])
+        }) */
