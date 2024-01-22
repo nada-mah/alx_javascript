@@ -4,14 +4,18 @@ const fs = require('fs')
 
 let URL = process.argv[2]
 let bodydestination = process.argv[3]
-data = ''
+options = {
+    'method' : 'GET',
+    'url' : URL,
+    'encoding' : 'utf-8'
+}
 
-req.get(URL, {encoding : 'utf-8'})
-    .on('data', data => {
-        fs.writeFile(bodydestination, data, (err) => {
-            if (err) throw err;
-        })
+req(options,(err,res) =>{
+    fs.writeFile(bodydestination, res.body, (err) => {
+        if (err) throw err;
     })
-             
+})
+    
+
     
     
