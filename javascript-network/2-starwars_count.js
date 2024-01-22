@@ -1,6 +1,5 @@
 #!/usr/bin/node
 const req = require('request')
-const { CLIENT_RENEG_WINDOW } = require('tls')
 
 url = process.argv[2] 
 
