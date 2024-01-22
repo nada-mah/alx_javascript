@@ -15,7 +15,7 @@ let count =0
 req(options , (err, res) => {
     
     jsonres = JSON.parse(res.body)
-    len = jsonres.count
+    len = jsonres["results"].length
     for(let i=0; i<len;i++){
         x = jsonres.results[i]['characters']
         for(let j=0; j<x.length; j++){
@@ -28,4 +28,5 @@ req(options , (err, res) => {
     }
     console.log(count)
 })
+
 
