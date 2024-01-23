@@ -27,8 +27,8 @@ request(options, (err, res)=>{
     record = JSON.parse(res.body)
     for(let i = 0; i<record.length;i++){
         if(record[i]['completed'] ){
-            if(record[i]['userId'] in temp){
-                temp[record[i]['userId']]+=1
+            if(record[i]['userId'] in tasksCompleted){
+                tasksCompleted[record[i]['userId']]+=1
             }
         }
     }
