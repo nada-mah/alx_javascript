@@ -11,7 +11,9 @@
         .link{
             font-weight: normal;
             font-style: italic;
-            font-size: 10px;
+            margin-left: 10px;
+            text-decoration: none;
+            color: #000;
         }
     </style>
 </head>
@@ -30,8 +32,8 @@
     <button id="show">Show the cookies</button>
     <!-- Create a function setCookies: -->
     <script>
-        let islogedin = false
         function setCookies(){
+            islogedin = false
             // It should set the cookie firstname with the value in the firstname input
             const inputf = document.getElementById('firstname');
             let firstname = inputf.value;
@@ -107,14 +109,17 @@
             if(islogedin==true){
                 firstname = getCookie('firstname');
                 const welcome = document.getElementById('welcome');
-                welcome.innerHTML =`Welcome ${firstname} <a href=''class='link' onclick="deleteCookiesAndShowForm()">(logout)</a>`
+                welcome.innerHTML =`Welcome: ${firstname} <a href=''class='link' onclick="deleteCookiesAndShowForm()">(logout)</a>`
                 hideForm();
                 welcome.classList.remove('hide');
             }else{
             showForm();
             }
         };
-        console.log('islogedin :>> ', islogedin);
+        setCookies();
+        if(islogedin==true){
+            showWelcomeMessageOrForm();
+        }
         const login = document.getElementById("login");
         login.onclick = showWelcomeMessageOrForm;
         const show = document.getElementById("show");
